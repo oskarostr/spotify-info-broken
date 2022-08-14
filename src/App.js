@@ -3,7 +3,7 @@ import './styles/main.scss'
 import 'react-spotify-auth/dist/index.css'
 import Header from './components/Header';
 import Card from './components/Card'
-import SignInBtn from './components/SignInBtn';
+import SignIn from './components/SignIn';
 import SpotifyWebApi from 'spotify-web-api-js';
 
 function App() {
@@ -47,30 +47,38 @@ function App() {
 
       spotify.getMyTopTracks()
         .then(data => {
-          console.log(data.items[0].album.artists)
+          //console.log(data.items[0].album.artists)
           setTopTracks(data.items)
         })
         .catch(err => console.error(err))
 
       spotify.getMe()
         .then(data => {
-          console.log(data)
+          //console.log(data)
           setUserData(data)
         })
         .catch(err => console.error(err))
     }
-  }, [])
+  })
 
-  console.log(topTracks)
+  //console.log(topTracks)
 
   let trackElements
   if(topTracks) {
     trackElements = topTracks.map(track => {
+      let artistsName = track.artists[0].name
+
+      for(let i = 1; i < track.artists.length; i++) {
+        //console.log(i + ' ' + track.artists[i].name)
+        artistsName += ', ' + track.artists[i].name
+      }
+
       return (
         <Card 
           key = {track.id} 
           name = {track.name}
           image = {track.album.images[1].url}
+          artist = {artistsName}
         />
       )
     })
@@ -88,7 +96,7 @@ function App() {
           </div>
         </main>
       ) : (
-        <SignInBtn URL = {loginUrl} />
+        <SignIn URL = {loginUrl} />
       )}
     </div>
   )

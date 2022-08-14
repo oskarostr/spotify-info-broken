@@ -4,7 +4,7 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
     gap: 2rem;
 }
 
@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 10px;
     color: $font-color;
     background-color: $dark-color;
     overflow: hidden;
@@ -25,6 +25,6 @@
 
     h1 {
         font-size: 1.25rem;
-        margin-top: 1rem;
+        margin: 1rem;
     }
 }

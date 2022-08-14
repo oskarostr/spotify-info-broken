@@ -3,6 +3,7 @@ import './styles/main.scss'
 import 'react-spotify-auth/dist/index.css'
 import Header from './components/Header';
 import Card from './components/Card'
+import SignInBtn from './components/SignInBtn';
 import SpotifyWebApi from 'spotify-web-api-js';
 
 function App() {
@@ -87,9 +88,7 @@ function App() {
           </div>
         </main>
       ) : (
-        <div className='btn-wrapper'>
-          <a href = {loginUrl} className='sign-in-btn'>Sign in</a>
-        </div>
+        <SignInBtn URL = {loginUrl} />
       )}
     </div>
   )

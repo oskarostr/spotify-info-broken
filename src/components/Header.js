@@ -1,3 +1,5 @@
+import '../styles/imports/header.scss'
+
 function Header(props) {
     return (
         <header>

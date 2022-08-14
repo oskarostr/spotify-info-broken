@@ -1,0 +1,30 @@
+@import './colors';
+
+.elements-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+    color: $font-color;
+    background-color: $dark-color;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+}

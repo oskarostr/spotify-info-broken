@@ -1,4 +1,4 @@
-
+import '../styles/imports/card.scss'
 
 function Card(props) {
 

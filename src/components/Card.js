@@ -3,7 +3,12 @@
 function Card(props) {
 
     return (
-        <p>{props.name}</p>
+        <div className="card">
+            <img src = {props.image} />
+            <h1>{props.name}</h1>
+            <h2>{props.artist}</h2>
+            <h2>{props.album}</h2>
+        </div>
     )
 }
 

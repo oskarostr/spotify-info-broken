@@ -1,13 +1,14 @@
 import React from 'react';
 import './styles/main.scss'
 import 'react-spotify-auth/dist/index.css'
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Card from './components/Card'
 import SpotifyWebApi from 'spotify-web-api-js';
 
 function App() {
   const [spotifyToken, setSpotifyToken] = React.useState()
   const [topTracks, setTopTracks] = React.useState()
+  const [userData, setUserData] = React.useState()
 
   const spotify = new SpotifyWebApi()
 
@@ -44,26 +45,46 @@ function App() {
       spotify.setAccessToken(token)
 
       spotify.getMyTopTracks()
-        .then(data => setTopTracks(data))
+        .then(data => {
+          console.log(data.items[0].album.artists)
+          setTopTracks(data.items)
+        })
+        .catch(err => console.error(err))
+
+      spotify.getMe()
+        .then(data => {
+          console.log(data)
+          setUserData(data)
+        })
         .catch(err => console.error(err))
     }
   }, [])
 
   console.log(topTracks)
 
-  /*const trackElements = topTracks.map(track => {
-    return (
-      <Card 
-        name = {track.name}
-      />
-    )
-  })*/
+  let trackElements
+  if(topTracks) {
+    trackElements = topTracks.map(track => {
+      return (
+        <Card 
+          key = {track.id} 
+          name = {track.name}
+          image = {track.album.images[1].url}
+        />
+      )
+    })
+  }
 
   return (
     <div className='app'>
-      { spotifyToken && topTracks ? (
+      { spotifyToken && topTracks && userData ? (
         <main>
-          <h1>{topTracks.href}</h1>
+          <Header 
+           userName = {userData.display_name}
+          />
+          <div className='elements-container'>
+            {trackElements}
+          </div>
         </main>
       ) : (
         <div className='btn-wrapper'>

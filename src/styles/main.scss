@@ -7,13 +7,23 @@
 }
 
 body {
-    height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(#1e1e1e 0%, #101010 100%);
+    background: #232323;
+    padding: 1rem 2rem;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
 }
 
 .btn-wrapper {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,10 +40,6 @@ body {
         border-radius: 50px;
         cursor: pointer;
         transition: .05s;
-    }
-    
-    .sign-in-btn:hover {
-        background-color: $accent-color-focus;
     }
 }
 
@@ -55,5 +61,47 @@ body {
         gap: 4rem;
         color: $accent-color;
         cursor: pointer;
+    }
+}
+
+.elements-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 15px;
+    color: $font-color;
+    background-color: $dark-color;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+        margin-top: 1rem;
+    }
+}
+
+header {
+    width: 100%;
+    padding: 2rem 0;
+
+    h1 {
+        color: $font-color;
+
+        span {
+            color: $accent-color;
+        }
     }
 }

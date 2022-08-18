@@ -4,5 +4,5 @@
 Simple web app allowing user to check their latest spotify activities.
 
 ## Useful links
-[Spotify authorization in JS](https://javascript.plainenglish.io/how-to-include-spotify-authorization-in-your-react-app-577b63138fd7).
+[Spotify authorization in JS](https://javascript.plainenglish.io/how-to-include-spotify-authorization-in-your-react-app-577b63138fd7).  
 [Spotify Web API JS](https://github.com/JMPerez/spotify-web-api-js) used for fetching metadata and user's information.

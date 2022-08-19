@@ -11,17 +11,7 @@ body {
     background: #232323;
 }
 
-.content-container {
-    padding: 1rem 2rem 1rem 15rem;
-}
-
 .app {
     width: 100%;
     height: 100%;
-}
-
-@media (max-width: 992px) {
-    .content-container {
-        padding: 1rem 2rem 6rem 2rem;
-    }
 }

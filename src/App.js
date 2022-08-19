@@ -1,18 +1,19 @@
 import React from 'react';
 import './styles/main.scss'
 import Header from './components/Header';
-import Card from './components/Card'
+import Card from './components/TopTracksCard'
 import SignIn from './components/SignIn';
 import SpotifyWebApi from 'spotify-web-api-js';
 import SideBar from './components/SideBar';
 import TopTracks from './components/TopTracks';
+import RecentlyPlayed from './components/RecentlyPlayed';
 
 function App() {
   const [spotifyToken, setSpotifyToken] = React.useState()
   const [topTracks, setTopTracks] = React.useState()
   const [userData, setUserData] = React.useState()
   const [lastPlayed, setLastPlayed] = React.useState()
-  const [page, setPage] = React.useState('tracks')
+  const [page, setPage] = React.useState('recently')
 
   const spotify = new SpotifyWebApi()
 
@@ -81,6 +82,13 @@ function App() {
           <TopTracks
             userName = {userData.display_name}
             topTracks = {topTracks}
+            pageDisplay = {page}
+          />
+
+          <RecentlyPlayed
+            userName = {userData.display_name}
+            recentlyPlayed = {lastPlayed}
+            pageDisplay = {page}
           />
         </div>
       ) : (

@@ -1,6 +1,10 @@
 @import './colors';
 
-.elements-container {
+.top-tracks-content-container {
+    padding: 1rem 2rem 1rem 15rem;
+}
+
+.top-tracks-elements-container {
     height: 100%;
     width: 100%;
     display: grid;
@@ -8,7 +12,7 @@
     gap: 2rem;
 }
 
-.card {
+.top-card {
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -18,6 +22,7 @@
     color: $font-color;
     background-color: $dark-color;
     overflow: hidden;
+    transition: .3s;
 
     img {
         width: 100%;
@@ -37,5 +42,25 @@
             font-size: .85rem;
             color: $darker-font-color;
         }
+    }
+}
+
+.top-card::after {
+    content: '';
+    position: relative;
+    bottom: 0;
+    width: 0;
+    height: 15px;
+    background-color: $accent-color;
+    transition: .3s;
+}
+
+.top-card:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .top-tracks-content-container {
+        padding: 1rem 2rem 6rem 2rem;
     }
 }

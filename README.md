@@ -6,7 +6,7 @@ Simple web app that allows user to view his top songs on Spotify
 ## Technologies
 Technologies used in this project  
 - React
-- Sass for styling
+- Sass
 
 ## Other
 - [Spotify authorization using JS](https://javascript.plainenglish.io/how-to-include-spotify-authorization-in-your-react-app-577b63138fd7).  

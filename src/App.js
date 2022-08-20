@@ -80,23 +80,22 @@ function App() {
         <div className='main-page'>
           <SideBar 
             changeToRecently = {() => setPage('recently')}
+            page = {page}
           />
           <TopTracks
             userName = {userData.display_name}
             topTracks = {topTracks}
-            pageDisplay = {page}
           />
         </div>
       ) : spotifyToken && topTracks && userData && page === 'recently' ? (
         <div className='main-page'>
           <SideBar 
             changeToTracks = {() => setPage('tracks')}
+            page = {page}
           />
-
           <RecentlyPlayed
             userName = {userData.display_name}
             recentlyPlayed = {lastPlayed}
-            pageDisplay = {page}
           />
         </div>
       ) : (

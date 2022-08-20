@@ -6,19 +6,24 @@ function RecentlyPlayed(props) {
     let recentlyPlayedElements
     if(props.recentlyPlayed) {
     recentlyPlayedElements = props.recentlyPlayed.map(last => {
-        /*let artistsName = last.artists[0].name
-
-        for(let i = 1; i < last.artists.length; i++) {
+        //creating new string with artist names
+        let artistsName = last.track.artists[0].name
+        for(let i = 1; i < last.track.artists.length; i++) {
             //console.log(i + ' ' + last.artists[i].name)
-            artistsName += ', ' + last.artists[i].name
-        }*/
+            artistsName += ', ' + last.track.artists[i].name
+        }
+
+        //counting time from last played
+        const date = new Date()
+        const minutes = date.getMinutes() + (date.getHours() * 60)
 
         return (
             <LatestCard 
                 key = {last.track.id} 
                 name = {last.track.name}
-                //image = {last.album.images[1].url}
-                //artist = {artistsName}
+                image = {last.track.album.images[1].url}
+                artist = {artistsName}
+                //time = {minutes}
             />
         )
     })

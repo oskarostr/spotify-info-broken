@@ -1,7 +1,6 @@
 import '../styles/imports/sidebar.scss'
 import { IoIosPodium } from 'react-icons/io'
 import { BiTimer } from "react-icons/bi";
-import { BsGraphUp } from "react-icons/bs";
 
 function SideBar(props) {
     return (
@@ -15,14 +14,9 @@ function SideBar(props) {
                     <li className='nav-text'>Top tracks</li>
                 </div>
 
-                <div className='nav-item'>
-                    <BsGraphUp className='icon' />
-                    <li className='nav-text'>Top artists</li>
-                </div>
-
-                <div className='nav-item' onClick = {props.changeToRecently}>
+                <div className='nav-item' onClick={props.changeToRecently}>
                     <BiTimer className='icon' />
-                    <li className='nav-text'>Latest</li>
+                    <li className='nav-text'>Recently played</li>
                 </div>
             </ul>
         </nav>

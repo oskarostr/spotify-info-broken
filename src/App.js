@@ -13,7 +13,7 @@ function App() {
   const [topTracks, setTopTracks] = React.useState()
   const [userData, setUserData] = React.useState()
   const [lastPlayed, setLastPlayed] = React.useState()
-  const [page, setPage] = React.useState('recently')
+  const [page, setPage] = React.useState('tracks')
 
   const spotify = new SpotifyWebApi()
 
@@ -76,13 +76,21 @@ function App() {
 
   return (
     <div className='app'>
-      { spotifyToken && topTracks && userData ? (
+      { spotifyToken && topTracks && userData && page === 'tracks' ? (
         <div className='main-page'>
-          <SideBar />
+          <SideBar 
+            changeToRecently = {() => setPage('recently')}
+          />
           <TopTracks
             userName = {userData.display_name}
             topTracks = {topTracks}
             pageDisplay = {page}
+          />
+        </div>
+      ) : spotifyToken && topTracks && userData && page === 'recently' ? (
+        <div className='main-page'>
+          <SideBar 
+            changeToTracks = {() => setPage('tracks')}
           />
 
           <RecentlyPlayed

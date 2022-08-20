@@ -1,10 +1,10 @@
 @import './colors';
 
-.recently-played-content-container {
+.recently-played__content-container {
     padding: 1rem 2rem 1rem 15rem;
 }
 
-.recently-played-elements-container {
+.recently-played__elements-container {
     height: 100%;
     width: 100%;
     display: flex;
@@ -13,7 +13,7 @@
     align-items: flex-start;
 }
 
-.recently-played-card {
+.recently-played__card {
     width: 100%;
     padding: 1rem 2rem;
     margin: .25rem 0;
@@ -27,7 +27,7 @@
     }
 }
 
-.recently-played-card::after {
+.recently-played__card::after {
     content: '';
     position: relative;
     bottom: 0;
@@ -37,12 +37,12 @@
     transition: .3s;
 }
 
-.recently-played-card:hover::after {
+.recently-played__card:hover::after {
     width: 100%;
 }
 
 @media (max-width: 992px) {
-    .recently-played-content-container {
+    .recently-played__content-container {
         padding: 1rem 2rem 5.5rem 2rem;
     }
 }

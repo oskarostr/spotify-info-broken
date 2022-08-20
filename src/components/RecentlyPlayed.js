@@ -25,12 +25,12 @@ function RecentlyPlayed(props) {
     }
 
     return (
-        <div className='recently-played-content-container'>
+        <div className='recently-played__content-container'>
             <Header 
                 userName = {props.userName}
                 text = ', these are your recently played songs'
             />
-            <div className="recently-played-elements-container">
+            <div className="recently-played__elements-container">
                 {recentlyPlayedElements}
             </div>
         </div>

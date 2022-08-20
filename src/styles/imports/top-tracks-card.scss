@@ -1,10 +1,10 @@
 @import './colors';
 
-.top-tracks-content-container {
+.top-tracks__content-container {
     padding: 1rem 2rem 1rem 15rem;
 }
 
-.top-tracks-elements-container {
+.top-tracks__elements-container {
     height: 100%;
     width: 100%;
     display: grid;
@@ -12,7 +12,7 @@
     gap: 2rem;
 }
 
-.top-card {
+.top-tracks__card {
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -45,7 +45,7 @@
     }
 }
 
-.top-card::after {
+.top-tracks__card::after {
     content: '';
     position: relative;
     bottom: 0;
@@ -55,12 +55,12 @@
     transition: .3s;
 }
 
-.top-card:hover::after {
+.top-tracks__card:hover::after {
     width: 100%;
 }
 
 @media (max-width: 992px) {
-    .top-tracks-content-container {
+    .top-tracks__content-container {
         padding: 1rem 2rem 6rem 2rem;
     }
 }

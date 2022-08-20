@@ -25,12 +25,12 @@ function TopTracks(props) {
     }
 
     return (
-        <div className='top-tracks-content-container'>
+        <div className='top-tracks__content-container'>
             <Header 
                 userName = {props.userName}
                 text = ', these are your top 20 tracks'
             />
-            <div className='top-tracks-elements-container'>
+            <div className='top-tracks__elements-container'>
                 {trackElements}
             </div>
         </div>

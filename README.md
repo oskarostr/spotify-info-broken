@@ -1,3 +1,3 @@
 # Sidebar
 
-Testing sidebar functionality and displaying multiple different informations
+Creating sidebar which allows user to switch between different informations about their Spotify activity
